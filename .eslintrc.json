@@ -15,16 +15,21 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "eslint-plugin-import-helpers", "prettier"],
+  "plugins": [
+    "@typescript-eslint",
+    "eslint-plugin-import-helpers",
+    "prettier"
+  ],
   "rules": {
     "camelcase": "off",
-    "prettier/prettier": "error",
     "import/no-unresolved": "error",
     "@typescript-eslint/naming-convention": [
       "error",
       {
         "selector": "interface",
-        "format": ["PascalCase"],
+        "format": [
+          "PascalCase"
+        ],
         "custom": {
           "regex": "^I[A-Z]",
           "match": true
@@ -39,7 +44,7 @@
     "no-empty-function": "off",
     "lines-between-class-members": "off",
     "import/extensions": [
-      "error",
+      // "error",
       "ignorePackages",
       {
         "ts": "never"
@@ -48,16 +53,31 @@
     "import-helpers/order-imports": [
       "warn",
       {
-        // example configuration
         "newlinesBetween": "always",
-        "groups": ["module", "/^@shared/", ["parent", "sibling", "index"]],
-        "alphabetize": { "order": "asc", "ignoreCase": true }
+        "groups": [
+          "module",
+          "/^@shared/",
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
       }
     ],
     "import/no-extraneous-dependencies": [
       "error",
-      { "devDependencies": ["**/*.spec.ts"] }
-    ]
+      {
+        "devDependencies": [
+          "**/*.spec.js"
+        ]
+      }
+    ],
+    "prettier/prettier": "error"
   },
   "settings": {
     "import/resolver": {
